@@ -18,8 +18,8 @@ namespace autotest_rm.Pages
             get
             {
                 Actions action = new Actions(webDriver);
-                action.MoveToElement(webDriver.FindElement(By.XPath("//input[contains(@class,'autosuggest-submit button-icon button-search')]")));
-                webDriver.FindElement(By.XPath("//input[contains(@class,'autosuggest-submit button-icon button-search')]")).Click();
+                action.MoveToElement(webDriver.FindElement(By.XPath("//input[contains(@class,'autosuggest-submit button-icon button-search')]"))).Click();
+                webDriver.FindElement(By.XPath("//input[contains(@class,'button-search')]")).Click();
                 return SearchBox;
             }
         }

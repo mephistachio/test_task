@@ -58,11 +58,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="Pages\SignUp.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\Login.cs" />
     <Compile Include="Test\SignUpTestFF.cs" />
-    <Compile Include="Test\GloginTestIE.cs" />
+    <Compile Include="Test\LoginTestFF.cs" />
     <Compile Include="Test\SearchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

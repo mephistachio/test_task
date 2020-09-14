@@ -41,8 +41,8 @@ namespace autotest_rm.Pages
 
             EmailTextBox.SendKeys(username);
             PwdBox.SendKeys(password);
-            string LoginPageTitle = webDriver.Title;
             LoginBtn.Click();
+            string LoginPageTitle = webDriver.Title;
             return LoginPageTitle;
 
         }

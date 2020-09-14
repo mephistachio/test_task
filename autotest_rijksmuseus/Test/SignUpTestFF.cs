@@ -2,6 +2,8 @@
 using OpenQA.Selenium;
 using autotest_rm.Pages;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace autotest_rm
 {
@@ -19,6 +21,7 @@ namespace autotest_rm
             webDriver.FindElement(By.XPath("//*[text()='Accept']")).Click();
             webDriver.FindElement(By.XPath("//span[text()='Log in']")).Click();
             webDriver.FindElement(By.XPath("//*[@class='reset-button-all link-like']")).Click();
+            new WebDriverWait(webDriver, TimeSpan.FromSeconds(3)).Until(x => x.FindElement(By.XPath("//*[@class='h3-like'][text()='With your e-mail address']")));
             webDriver.FindElement(By.XPath("//*[@class='button-primary button-like button-bold button-combo-end button-forward']"));
             webDriver.Manage().Window.Maximize();
         }
