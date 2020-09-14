@@ -33,6 +33,15 @@ namespace autotest_rm.Pages
                 return webDriver.FindElement(By.XPath("//input[contains(@class,'button-bold button-primary')][@value='Log in']"));
             }
         }
+
+        private IWebElement LogOutBtn
+        {
+            get
+            {
+        
+                return webDriver.FindElement(By.XPath("//button[contains(.,'Log out')]"));
+            }
+        }
         #endregion
 
         #region Methods
@@ -44,6 +53,14 @@ namespace autotest_rm.Pages
             LoginBtn.Click();
             string LoginPageTitle = webDriver.Title;
             return LoginPageTitle;
+
+        }
+        public string LogOutFromSys()
+        {
+
+            LogOutBtn.Click();
+            string LogOutPageTitle = webDriver.Title;
+            return LogOutPageTitle;
 
         }
     }

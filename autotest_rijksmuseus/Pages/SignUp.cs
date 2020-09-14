@@ -54,8 +54,8 @@ namespace autotest_rm.Pages
             EmailTextBox.SendKeys(useremail);
             RegPwdBox.SendKeys(password);
             RepeatPwdBox.SendKeys(password);
-            string LoginPageTitle = webDriver.Title;
             SignUpBtn.Click();
+            string LoginPageTitle = webDriver.Title;
             return LoginPageTitle;
 
         }

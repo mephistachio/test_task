@@ -36,5 +36,9 @@ namespace autotest_rm
             string homepageTitle = ObjHomePage.GetHomePageTitle();
             Assert.AreEqual("Rijksmuseum – The Museum of the Netherlands - in Amsterdam", homepageTitle);
         }
+        public void BrowserClose()
+        {
+            webDriver.Quit();
+        }
     }
 }

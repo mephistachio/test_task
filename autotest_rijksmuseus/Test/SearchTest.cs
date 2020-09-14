@@ -22,7 +22,7 @@ namespace autotest_rm.Test
 
         [Test]
         //positive
-        public void SearchTestFF()
+        public void TestSearchFF()
         {
             HomePage objSearch = new HomePage(webDriver);
             objSearch.SearchBtn.Click();
@@ -30,13 +30,21 @@ namespace autotest_rm.Test
             Assert.AreEqual(205, searchResult.Count);
         }
         [Test]
-        //negative test
-        public void SearchNegative()
+        //add to collection result
+        public void TestAddToCollection()
         {
-            HomePage objSearch = new HomePage(webDriver);
-            objSearch.SearchBtn.Click();
-            var searchResult = objSearch.SearchgBox("#@)!$0");
-            Assert.AreEqual(0, searchResult.Count);
+            SearchPage objSearchPage = new SearchPage(webDriver);
+            objSearchPage.AddToCollection.Click();
+            webDriver.FindElement(By.XPath("//*[@data-uitest='profile-avatar']")).Click();
+            webDriver.FindElement(By.XPath("//*[text()='My first collection']")).Click();
+            IWebElement pic = webDriver.FindElement(By.XPath("//img[contains(@data-src,'F=w200')]"));
+            Assert.AreEqual(true, pic.Displayed);
+        }
+
+
+        public void BrowserClose()
+        {
+            webDriver.Quit();
         }
     }
 }
